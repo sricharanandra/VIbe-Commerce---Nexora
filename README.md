@@ -27,40 +27,6 @@ A full-stack e-commerce shopping cart application built with React, TypeScript, 
 - PostgreSQL for data persistence
 - RESTful API architecture
 
-## Project Structure
-
-```
-nexora/
-├── backend/
-│   ├── src/
-│   │   ├── database/
-│   │   │   ├── db.ts          # Database connection
-│   │   │   └── setup.ts       # Database schema and seed data
-│   │   ├── routes/
-│   │   │   ├── products.ts    # Product endpoints
-│   │   │   ├── cart.ts        # Cart endpoints
-│   │   │   └── checkout.ts    # Checkout endpoint
-│   │   ├── types/
-│   │   │   └── index.ts       # TypeScript type definitions
-│   │   └── index.ts           # Express server entry point
-│   ├── package.json
-│   └── tsconfig.json
-└── frontend/
-    ├── src/
-    │   ├── pages/
-    │   │   ├── Products.tsx   # Products listing page
-    │   │   ├── Cart.tsx       # Shopping cart page
-    │   │   └── Checkout.tsx   # Checkout page
-    │   ├── api.ts             # API client functions
-    │   ├── types.ts           # TypeScript interfaces
-    │   ├── App.tsx            # Main app component
-    │   ├── App.css            # Global styles
-    │   └── main.tsx           # React entry point
-    ├── index.html
-    ├── package.json
-    └── vite.config.ts
-```
-
 ## API Endpoints
 
 ### Products
@@ -88,122 +54,43 @@ nexora/
 - PostgreSQL (v14 or higher)
 - npm or yarn
 
-### Database Setup
+### Installation
 
-1. Install PostgreSQL if not already installed
-2. Create a new database:
+1. **Clone the repository**
+
 ```bash
-createdb vibecommerce
+git clone https://github.com/sricharanandra/VIbe-Commerce---Nexora.git
+cd vibe-commerce
 ```
 
-Or using psql:
-```sql
-CREATE DATABASE vibecommerce;
-```
+2. **Run the setup script**
 
-### Backend Setup
-
-1. Navigate to the backend directory:
 ```bash
-cd backend
+chmod +x setup.sh
+./setup.sh
 ```
 
-2. Install dependencies:
+The setup script will automatically:
+- Check PostgreSQL installation and service status
+- Create the `vibecommerce` database
+- Install all backend and frontend dependencies
+- Create `.env` configuration files
+- Set up database schema with tables
+- Seed sample product data
+
+3. **Start the application**
+
 ```bash
-npm install
+chmod +x start.sh
+./start.sh
 ```
 
-3. Create `.env` file from example:
-```bash
-cp .env.example .env
-```
+This will start both servers:
+- **Frontend:** http://localhost:3000
+- **Backend API:** http://localhost:5000
 
-4. Update `.env` with your database connection string:
-```
-PORT=5000
-DATABASE_URL=postgresql://localhost:5432/vibecommerce
-NODE_ENV=development
-```
+**That's it!** Open http://localhost:3000 in your browser to use the application.
 
-5. Setup database tables and seed data:
-```bash
-npm run db:setup
-```
-
-6. Start the backend server:
-```bash
-npm run dev
-```
-
-The backend will run on http://localhost:5000
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-The frontend will run on http://localhost:3000
-
-## Usage
-
-1. Start the backend server (must be running first)
-2. Start the frontend development server
-3. Open http://localhost:3000 in your browser
-4. Browse products and add items to cart
-5. View cart and update quantities
-6. Proceed to checkout and enter customer information
-7. View order receipt after successful checkout
-
-## Database Schema
-
-### products
-- id (SERIAL PRIMARY KEY)
-- name (VARCHAR)
-- price (DECIMAL)
-- description (TEXT)
-- image_url (TEXT)
-- created_at (TIMESTAMP)
-
-### cart_items
-- id (SERIAL PRIMARY KEY)
-- product_id (INTEGER, FK to products)
-- quantity (INTEGER)
-- created_at (TIMESTAMP)
-
-### orders
-- id (SERIAL PRIMARY KEY)
-- customer_name (VARCHAR)
-- customer_email (VARCHAR)
-- total_amount (DECIMAL)
-- order_data (JSONB)
-- created_at (TIMESTAMP)
-
-## Features Implemented
-
-- ✅ Product catalog with 10 mock items
-- ✅ Add to cart functionality
-- ✅ Update cart item quantities
-- ✅ Remove items from cart
-- ✅ Cart total calculation
-- ✅ Checkout form with validation
-- ✅ Order receipt modal
-- ✅ PostgreSQL database persistence
-- ✅ Error handling
-- ✅ Responsive design
-- ✅ Dark theme UI
-- ✅ TypeScript throughout
 
 ## Screenshots
 
@@ -242,17 +129,6 @@ cd frontend
 npm run build
 npm run preview
 ```
-
-## Future Enhancements
-
-- User authentication and multi-user support
-- Product search and filtering
-- Product categories
-- Order history page
-- Payment gateway integration
-- Product inventory management
-- Admin dashboard
-
 ## License
 
 This project is for educational purposes as part of the Vibe Commerce coding assessment.
