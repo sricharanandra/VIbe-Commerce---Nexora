@@ -96,15 +96,20 @@ This will start both servers:
 
 ### Products Page
 The main products grid displays all available items with images, descriptions, prices, and add to cart buttons.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/73887c1c-3f7f-430f-b954-8c63d28b0079" />
+
 
 ### Cart Page
 The shopping cart shows all added items with quantity controls, remove buttons, and order summary with total.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/f588f262-92a5-44dd-8e9c-0a05cf485fda" />
 
 ### Checkout Page
 The checkout form collects customer information and displays an order summary before placing the order.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/aafa1669-40b6-42e9-94fd-b6804f043f7e" />
 
 ### Order Receipt
 After successful checkout, a modal displays the order confirmation with order details and receipt.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c0c89cf3-7ea1-4e63-a743-becb0293b82b" />
 
 ## Development Notes
 
